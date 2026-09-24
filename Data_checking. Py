@@ -2,3 +2,10 @@ import pandas as pd
 
 df = pd.read_csv("transformed_data.csv")
 
+summary = {
+    "Total Records": len(df),
+    "Total Sales": df["total_sales"].sum(),
+    "Total Profit": df["profit"].sum(),
+    "Average Sales": df["total_sales"].mean(),
+    "Average Profit": df["profit"].mean()
+
