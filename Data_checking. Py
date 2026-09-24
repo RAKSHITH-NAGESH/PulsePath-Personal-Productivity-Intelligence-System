@@ -9,3 +9,21 @@ summary = {
     "Average Sales": df["total_sales"].mean(),
     "Average Profit": df["profit"].mean()
 
+}
+
+print("Final Data Summary")
+print("----------------------")
+
+for key, value in summary.items():
+    print(key + ":", value)
+
+print("\nTop 5 Products:")
+
+top_products = (
+    df.groupby("product")["total_sales"]
+    .sum()
+    .sort_values(ascending=False)
+    .head(5)
+)
+
+print(top_products)
